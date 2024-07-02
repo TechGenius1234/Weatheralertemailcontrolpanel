@@ -1,30 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather Alert System</title>
-    <link rel="stylesheet" href="styles.css">
+<title>Login</title>
+<style>
+body {
+  font-family: sans-serif;
+}
+
+.container {
+  width: 300px;
+  margin: 100px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+input[type="text"], input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+input[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+.error {
+  color: red;
+  margin-bottom: 10px;
+}
+</style>
 </head>
 <body>
-    <header>
-        <h1>Weather Alert System</h1>
-    </header>
-    
-    <main>
-        <section id="weather">
-            <h2>Current Weather in Kelowna, BC</h2>
-            <div id="weather-data">
-                <!-- Weather data will be displayed here -->
-            </div>
-        </section>
-    </main>
 
-    <footer>
-        <p>Issues? <a href="https://github.com/TechGenius1234/TechGenius1234.github.io/issues">Click Here</a> to report them so we can fix them.</p>
-    </footer>
+<div class="container">
+  <h2>Login</h2>
 
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-    <script src="script.js"></script>
+  <form action="javascript:void(0)" method="post" id="login-form">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+
+    <div id="error" class="error"></div>
+
+    <input type="submit" value="Login">
+  </form>
+
+  <script>
+    // Replace with your actual username and password
+    const correctUsername = "admin";
+    const correctPassword = "20459$78eE";
+
+    const form = document.getElementById("login-form");
+    const errorDiv = document.getElementById("error");
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+
+      if (username === correctUsername && password === correctPassword) {
+        // Redirect to the protected page
+        window.location.href = "protected-page.html"; // Replace with your protected page
+      } else {
+        errorDiv.textContent = "Invalid username or password.";
+      }
+    });
+  </script>
+</div>
+
 </body>
 </html>
