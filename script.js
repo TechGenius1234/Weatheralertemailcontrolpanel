@@ -4,7 +4,7 @@ const countryCode = 'CA';
 const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city},${countryCode}&appid=${apiKey}`;
 
 // Initialize EmailJS with your Service ID
-emailjs.init('YOUR_EMAILJS_USER_ID');
+emailjs.init('service_tqhn6bk');
 
 function fetchWeatherDataAndSendEmail() {
     fetch(apiUrl)
@@ -24,7 +24,7 @@ function fetchWeatherDataAndSendEmail() {
 
 function sendWeatherAlertEmail(weatherDescription, temperature, humidity) {
     const params = {
-        to_email: 'recipient@example.com', // Replace with recipient's email address
+        to_email: 'evan.degroot.network@outlook.com', // Replace with recipient's email address
         from_name: 'Weather Alert Service',
         message: `
             Weather Alert for Kelowna, BC:
@@ -35,7 +35,7 @@ function sendWeatherAlertEmail(weatherDescription, temperature, humidity) {
     };
 
     // Send email using EmailJS
-    emailjs.send('YOUR_EMAILJS_SERVICE_ID', 'YOUR_EMAILJS_TEMPLATE_ID', params)
+    emailjs.send('service_tqhn6bk', 'template_590983g', params)
         .then(function(response) {
             console.log('Email sent:', response);
         }, function(error) {
