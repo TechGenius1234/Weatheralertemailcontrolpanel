@@ -4,7 +4,7 @@ emailjs.init('service_tqhn6bk');
 // Function to send weather alert email
 function sendWeatherAlertEmail(weatherDescription, temperature, humidity) {
     const params = {
-        to_email: 'recipient@example.com', // Replace with recipient's email address
+        to_email: 'evan.degroot.network@outlook.com', // Replace with recipient's email address
         from_name: 'Weather Alert Service',
         message: `
             Weather Alert for Kelowna, BC:
