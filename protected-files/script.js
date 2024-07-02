@@ -1,29 +1,5 @@
-// Firebase configuration (already initialized in previous steps)
-
-// Initialize EmailJS with your Service ID (replace with your actual values)
-emailjs.init('YOUR_EMAILJS_USER_ID');
-
-// Function to fetch weather data
-function fetchWeatherData() {
-    const apiKey = '918d4762593f410095f10042240207'; // Your OpenWeatherMap API key
-    const city = 'Kelowna';
-    const countryCode = 'CA';
-    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city},${countryCode}&appid=${apiKey}`;
-
-    return fetch(apiUrl)
-        .then(response => response.json())
-        .then(data => {
-            return {
-                weatherDescription: data.weather[0].description,
-                temperature: data.main.temp,
-                humidity: data.main.humidity
-            };
-        })
-        .catch(error => {
-            console.error('Error fetching weather data:', error);
-            return null;
-        });
-}
+// Initialize EmailJS with your Service ID
+emailjs.init('service_tqhn6bk');
 
 // Function to send weather alert email
 function sendWeatherAlertEmail(weatherDescription, temperature, humidity) {
@@ -39,7 +15,7 @@ function sendWeatherAlertEmail(weatherDescription, temperature, humidity) {
     };
 
     // Send email using EmailJS
-    emailjs.send('YOUR_EMAILJS_SERVICE_ID', 'YOUR_EMAILJS_TEMPLATE_ID', params)
+    emailjs.send('service_tqhn6bk', 'template_590983g', params)
         .then(function(response) {
             console.log('Email sent:', response);
             alert('Weather alert email sent successfully!');
